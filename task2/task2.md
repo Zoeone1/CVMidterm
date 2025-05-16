@@ -58,8 +58,3 @@ python singletest.py #测试单张图片，指定图片文件路径
 python singletest.py #测试单张图片，指定图片文件路径
 ```
 
-# Sparse R-CNN
-
-
-
-python tools/train.py configs/sparse_rcnn/sparse-rcnn_r50_fpn_1x_voc0712.py --work-dir work_dirs/sparse_rcnn_voc
