@@ -26,13 +26,37 @@ python Mask-R-CNN/train_test_mask_rcnn.py --mode test --data_dir path/to/VOC2012
 ```
 
 ```
-python Mask-R-CNN/train_test_mask_rcnn.py --mode test --model_path mask_rcnn_best_model.pth --test_image outer-test/image4.jpg --output_path output/mask-rcnn/result8.jpg #测试单张图像
+python Mask-R-CNN/train_test_mask_rcnn.py --mode test --model_path mask_rcnn_best_model.pth --test_image outer-test/image4.jpg --output_path output/mask-rcnn/result8.jpg #测试单张图像，输出最终预测结果
+```
+
+```
+python Mask-R-CNN/train_test_mask_rcnn.py --mode test --model_path mask_rcnn_best_model.pth --test_image outer-test/image4.jpg --output_path output/mask-rcnn/result8.jpg  --output_proposals  #测试单张图像，输出proposals
 ```
 
 ```
 tensorboard --logdir logs #查看tensorboard日志
 ```
 
+### Sparse R-CNN
 
+mmdetection-main框架下载链接：https://github.com/open-mmlab/mmdetection
 
+```
+python tools/train.py configs/sparse_rcnn/sparse-rcnn_r50_fpn_1x_coco.py --word_dirs word_dirs/sparse_rcnn_r50_fpn_1x_coco #生成配置文件
+```
 
+```
+python tools/train.py work_dirs/sparse_rcnn_r50_fpn_1x_coco/sparse-rcnn_r50_fpn_1x_coco.py #训练模型
+```
+
+```
+python singletest.py #测试单张图片，指定图片文件路径
+```
+
+```
+ python tools/analysis_tools/analyze_logs.py plot_curve   work_dirs/sparse_rcnn_r50_fpn_1x_coco/20250516_081836/vis_data/20250516_081836.json     --keys loss --out results.png --legend loss  #绘制loss、mAP曲线（通过指定不同keys）
+```
+
+```
+python singletest.py #测试单张图片，指定图片文件路径
+```
