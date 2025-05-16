@@ -2,6 +2,8 @@
 
 ## task1
 
+caltech 数据集下载链接：https://data.caltech.edu/records/mzrjq-6wc02/files/caltech-101.zip?download=1
+
 模型训练：在文件目录下运行：
 
 ```
@@ -14,6 +16,7 @@ python task1-pretrained.py #使用 Caltech-101 数据集，其余层使用在Ima
 
 ## task2
 
+VOC数据集下载地址：http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit
 ### Mask R-CNN
 
 
