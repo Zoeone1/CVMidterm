@@ -12,3 +12,15 @@
 提交要求：
 （1） ** 仅提交pdf格式的实验报告** ，报告中除对模型、数据集和实验结果的基本介绍外，还应包含用Tensorboard可视化的训练过程中在训练集和验证集上的loss曲线和验证集上的accuracy变化；
 （2） 代码提交到自己的public github repo，repo的readme中应清晰指明如何进行训练和测试，训练好的模型权重上传到百度云/google drive等网盘，实验报告内应**包含**实验代码所在的**github repo链接**及模型 **权重的下载地址** 。
+
+
+模型训练：在文件目录下运行：
+
+```
+python task1-random.py #使用 Caltech-101 数据集从随机初始化的网络参数开始训练
+```
+
+```
+python task1-pretrained.py #使用 Caltech-101 数据集，其余层使用在ImageNet上预训练得到的网络参数进行初始化，开始训练
+```
+
