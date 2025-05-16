@@ -45,6 +45,14 @@ tensorboard --logdir logs #查看tensorboard日志
 mmdetection-main框架下载链接：https://github.com/open-mmlab/mmdetection
 
 ```
+python tools/dataset_converters/pascal_voc.py \
+    /path/to/VOCdevkit/VOC2012 \
+    --out-dir /path/to/VOCdevkit/coco \
+    --nproc 8 \
+    --split 2012  #将VOC2012数据集转换为Coco格式，同时注意修改生成的配置文件中的数据集目录名和数据集类别数量及具体类名
+```
+
+```
 python tools/train.py configs/sparse_rcnn/sparse-rcnn_r50_fpn_1x_coco.py --word_dirs word_dirs/sparse_rcnn_r50_fpn_1x_coco #生成配置文件
 ```
 
